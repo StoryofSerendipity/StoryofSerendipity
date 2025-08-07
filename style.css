@@ -1,0 +1,261 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('bunga3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.3); /* transparan putih */
+  backdrop-filter: blur(12px);               /* efek blur kaca */
+  -webkit-backdrop-filter: blur(12px);       /* support Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 0 10px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif; /* biar lebih elegan */
+  color: #b5179e;
+  letter-spacing: 1px;
+}
+
+/* NAV BAR */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: #000000; /* hitam */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hover Glowing Effect */
+nav ul li a:hover {
+  color: #fff;
+  background-color: #ff69b4;
+  box-shadow: 0 0 15px #ff69b4aa, 0 0 30px #ff69b4aa;
+  transform: translateY(-2px);
+}
+
+/* Active / Saat Diklik */
+nav ul li a.active {
+  background-color: #ff69b4;
+  color: white;
+  box-shadow: 0 0 15px #ff69b4aa, 0 0 30px #ff69b4aa;
+  transform: translateY(-2px);
+}
+
+/* Tambahan animasi garis bawah (opsional) */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 0;
+  height: 3px;
+  background: #ff69b4;
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 2px;
+  z-index: -1;
+}
+
+nav ul li a:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+
+/* Section */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Katalog Produk */
+.produk-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.produk {
+  background-color: #ffe5ec;
+  border-radius: 10px;
+  padding: 15px;
+  width: 280px;
+  text-align: center;
+}
+
+.produk img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.produk img:hover {
+  transform: scale(1.2);
+  z-index: 10;
+  position: relative;
+}
+
+.produk h3 {
+  margin: 10px 0 5px;
+}
+
+.produk p {
+  font-weight: bold;
+  color: #c9184a;
+}
+
+/* Tombol */
+.tombol-pesan {
+  display: inline-block;
+  background-color: #ff69b4;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.tombol-pesan:hover {
+  background-color: #ff4081;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* transparan putih */
+  backdrop-filter: blur(12px);               /* efek blur kaca */
+  -webkit-backdrop-filter: blur(12px);       /* support Safari */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .produk-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  footer {
+    position: static;
+  }
+}
+p {
+  text-align: justify;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 25px; /* jarak antar menu */
+  justify-content: center; /* tengah horizontal */
+}
+
+/* efek glowing saat hover */
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #000000;
+  box-shadow: 0 0 8px 3px #ff69b4;
+  /* bisa juga tambah glow warna lain sesuai selera */
+}
+
+.container {
+  background-color: rgba(255,255,255,0.85);
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 700px;
+  border-radius: 12px;
+  color: #333;
+}
+
+ul, ol {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+ul li, ol li {
+  margin-bottom: 8px;
+}
+/* Ukuran gambar produk diperbesar */
+.produk img {
+  width: 100%;
+  height: 300px; /* gambar lebih besar */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Tambahan styling deskripsi & harga */
+.produk .harga {
+  font-weight: bold;
+  color: #c9184a;
+  margin-top: 5px;
+}
+
+.produk .deskripsi {
+  font-size: 14px;
+  color: #444;
+  margin-top: 5px;
+}
+
+/* Judul katalog */
+#katalog h2 {
+  text-align: center;
+  color: #b5179e;
+  margin-bottom: 10px;
+}
+
+#katalog p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
